@@ -13,18 +13,7 @@
   </head>
 
   <body>
-  <% if notice.present? %>
-  <div class="alert alert-success alert-dismissible" role="alert">
-    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    <%= notice %>
-  </div>
-  <% end %>
-  <% if alert.present? %>
-  <div class="alert alert-danger alert-dismissible" role="alert">
-    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    <%= alert %>
-  </div>
-  <% end %>
+
 
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
@@ -40,6 +29,20 @@
     </div>
   </nav>
   <div class="container">
+    <% if notice.present? %>
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <%= notice %>
+      </div>
+    <% end %>
+
+    <% if alert.present? %>
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <%= alert %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </div>
   </body>
