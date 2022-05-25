@@ -1,0 +1,40 @@
+<!--<div id="users">-->
+  <%# @users.each do |user| %>
+    <%#= render user %>
+<!--    <p>-->
+      <%#= link_to "Show this user", user %>
+<!--    </p>-->
+  <%# end %>
+<!--</div>-->
+
+
+  <div class="row" >
+    <h1>Users</h1>
+    <%= link_to "New user", new_user_path, class: "btn btn-outline-dark"  %>
+  </div>
+
+  <div class="row">
+
+    <table class="table">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+      <th scope="col">Password</th>
+      <th scope="col" colspan="3">CRUD Options</th>
+    </tr>
+
+      <% @users.each do |user| %>
+        <tr>
+          <td ><%= user.id %></td>
+          <td><%= user.username %></td>
+          <td><%= user.email %></td>
+          <td><%= user.psw %></td>
+          <td><%= link_to 'View', user %></td>
+          <td><%= link_to 'Edit', edit_user_path(user)  %></td>
+          <td><%= button_to 'Delete', user_path(user)  %></td>
+        </tr>
+      <% end %>
+
+    </table>
+  </div>

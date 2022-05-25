@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsList</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  <% if notice.present? %>
+  <div class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <%= notice %>
+  </div>
+  <% end %>
+  <% if alert.present? %>
+  <div class="alert alert-danger alert-dismissible" role="alert">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <%= alert %>
+  </div>
+  <% end %>
+
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <%= link_to "RailsList", root_path, class: "navbar-brand" %>
+      <ul class="list-group list-group-horizontal">
+        <% if current_user.nil? %>
+          <li class="list-group-item"><%= link_to "Login", log_in_path, class: "navbar-brand" %></li>
+          <li class="list-group-item"><%= link_to "Registration", sign_up_path, class: "navbar-brand"  %></li>
+        <% else %>
+          <li class="list-group-item"><%= link_to "Log out", logout_path, method: "delete", class: "navbar-brand" %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <%= yield %>
+  </div>
+  </body>
+</html>
