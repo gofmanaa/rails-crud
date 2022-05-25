@@ -30,9 +30,9 @@
           <td><%= user.username %></td>
           <td><%= user.email %></td>
           <td><%= user.psw %></td>
-          <td><%= link_to 'View', user %></td>
-          <td><%= link_to 'Edit', edit_user_path(user)  %></td>
-          <td><%= button_to 'Delete', user_path(user)  %></td>
+          <td><%= link_to 'View', user, class: "btn btn-primary" %></td>
+          <td><%= link_to 'Edit', edit_user_path(user), class: "btn btn-secondary"  %></td>
+          <td><%= button_to 'Delete', user_path(user), class: "btn btn-danger"  %></td>
         </tr>
       <% end %>
 

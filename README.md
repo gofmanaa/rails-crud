@@ -28,3 +28,7 @@ git clone https://github.com/gofmanaa/rails-crud.git
   email: admin@mail.com
   password: 1234
 ```
+
+![Login Form](doc/login.png)
+![Users List](doc/users_list.png)
+
